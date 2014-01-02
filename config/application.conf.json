@@ -1,0 +1,45 @@
+/*
+  CleverStack Angular Application Configuration.
+  This config can be used to change the ports associated with your app development servers.
+*/
+{
+  /*
+    Development Server
+  */
+  "dev": {
+    "port": "9000", // default 9000
+    "dir": "./app", // the development directory of your app
+    "liveReloadPort": "35729", // default 35729
+    "hostname": "localhost" // using 0.0.0.0 will make the server accessible from anywhere
+  },
+
+  /*
+    Unit Testing Server
+  */
+  "test": {
+    "port": "9090", // default 9090
+    "dir": "./test", // if you change this it must reflect in /config/spec-*.conf.js
+    "coverage": {
+        "port": "5555", // default 5555
+        "dir": "./test/coverage/" // browsable directory for unit testing code coverage reports
+    }
+  },
+
+  /*
+    Production Preview Server
+  */
+  "dist": {
+    "port": "9009", // default 9009
+    "dir": "./dist" // directory where you want your production builds to go
+  },
+
+  /*
+    API Documentation Server
+  */
+  "docs": {
+    "port": "9999", // default 9999
+    "dir": "./docs", // used to hold the latest docs build
+    "showAngularDocs": "true", // setting to "true" will build the Official Angular API docs also
+    "showDocularDocs": "true" // setting to "true" will build the Official Docular API docs also
+  }
+}

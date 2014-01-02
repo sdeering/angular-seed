@@ -1,0 +1,28 @@
+
+/*
+  SASS Bootstrap 3
+
+  Bootstrap 3 Style Variables: /bower_components/sass-bootstrap/lib/_variables.scss
+  Bootstrap 3 Style Components: /bower_components/sass-bootstrap/lib/*.scss
+  Live Reload UI Page: http://localhost:9000/ui.html
+
+*/
+/* Glyphs http://getbootstrap.com/components/#glyphicons */
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+@import '../bower_components/sass-bootstrap/lib/bootstrap';
+@import '../bower_components/compass-mixins/lib/compass';
+
+/* Partials */
+@import 'partials/home';
+@import 'partials/login';
+@import 'partials/register';
+@import 'partials/dashboard';
+@import 'partials/header';
+@import 'partials/footer';
+@import 'partials/navbar';
+
+/*
+    Include your custom author styles below.
+    For help with SASS see here: http://sass-lang.com/documentation/file.SASS_REFERENCE.html
+*/

@@ -1,0 +1,33 @@
+
+#home {
+
+    .server-list {
+
+        list-style: none;
+        text-align: left;
+        padding-left: 50px;
+
+        li {
+
+            padding: 5px 0;
+
+            span.title {
+
+                display: inline-block;
+                float: left;
+                width: 130px;
+                line-height: 30px;
+
+            }
+
+            a {
+
+                margin: 0 5px 10px 0;
+
+            }
+
+        }
+
+    }
+
+}
