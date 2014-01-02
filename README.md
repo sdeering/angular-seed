@@ -381,7 +381,7 @@ This file is used to specify consistent coding styles between the developers on 
 
 ## License
 
-CleverStack is copyright of [Clevertech](http://clevertech.biz) and is licensed under the MIT License.
+Copyright [Clevertech](http://clevertech.biz) 2014 MIT License.
 
 -----
 I'm documentation! Sometimes I fail. If you see this please fix me and submit a pull request =).
