@@ -16,7 +16,7 @@ CleverStack Angular Seed provides you with a cutting edge AngularJS development 
 
 These are the main features provided by this front-end development workflow:
 
-* **Development Server** - Live Reload with jsHint, COMPASS, SASS support
+* **Development Server** - Live Reload with jsHint, LESS support
 * **Unit Testing Server** - Run fully automated unit tests with Karma and Jasmine support.
 * **E2E Testing Server** - Run fully automated E2E tests with Selenuim WebDriver & Protractor.
 * **Browserless Testing** - Perform tests without using a browser with PhantomJS.
@@ -26,7 +26,7 @@ These are the main features provided by this front-end development workflow:
 
 ### Coming soon
 
-* LESS, CoffeeScript support.
+* CoffeeScript support.
 * Mocha support.
 * Sourcemaps support.
 * HTML5 push state.
@@ -149,7 +149,7 @@ This is the main directory structure.
 ### Development Server
 Runs on default port: `9000`
 
-This provides you with a nicely automated workflow with AngularJS. On save it provides live page reload, jshint code syntax checking, source maps support, SASS file compilation & autoprefixing of css styles for legacy browsers. You can also view your Bootstrap 3 UI on this page with live reload `:9000/ui.html`.
+This provides you with a nicely automated workflow with AngularJS. On save it provides live page reload, jshint code syntax checking, source maps support, LESS file compilation & autoprefixing of css styles for legacy browsers. You can also view your Bootstrap 3 UI on this page with live reload `:9000/ui.html`.
 
 ### API Documentation Server
 Runs on default port: `9999`
@@ -159,7 +159,7 @@ This provides API documentation for your AngularJS app.
 ### Unit Testing Server
 Runs on default port: `9090`
 
-This provides automated unit testing for AngularJS using Karma test runner. You can also run unit tests for Bootstrap 3 `bower_components/sass-bootstrap/js/tests/`.
+This provides automated unit testing for AngularJS using Karma test runner.
 
 ### Unit Testing Code Coverage Server
 Runs on default port: `5555`
@@ -200,9 +200,9 @@ You can build a production ready version of your app in seconds by running the `
 
 * Change your core application Bootstrap 3 styles & scripts here:
 
-   `app/bower_components/sass-bootstrap/js/*.js`
+   `app/bower_components/bootstrap/js/*.js`
 
-   `app/bower_components/sass-bootstrap/lib/*.scss`
+   `app/bower_components/bootstrap/less/*.less`
 
 
 * Add additional styles here:
@@ -344,9 +344,9 @@ We could have chosen any of them as a matter of preference such as jamine or qun
 Karma is a great tool for unit testing, and Protractor is intended for end to end or integration testing. This means that small tests for the logic of your individual controllers, directives, and services should be run using Karma. Big tests in which you have a running instance of your entire application should be run using Protractor. Protractor is intended to run tests from a user's point of view - if your test could be written down as instructions for a human interacting with your application, it should be an end to end test written with Protractor. Source: [Protractor Docs FAQ](https://github.com/angular/protractor/blob/23f84b77c5f1842923302e39cadfef06da0517b0/docs/faq.md)
 
 
-## FAQ - SASS & Boostrap 3
+## FAQ - Boostrap 3 & LESS
 
-**Does it support normal CSS as well as SASS?**
+**Does it support normal CSS as well as LESS?**
 
 Yes. And it uses autoprofixer so you don't need to worry about adding legacy browser prefixes. It does this all for you - browsers controlled in the config.
 
@@ -354,13 +354,13 @@ Yes. And it uses autoprofixer so you don't need to worry about adding legacy bro
 
 If you want to make changes to Boostrap Source files you can add this line to the .gitignore file so your changes persist through Git for the project.
 
-** Why did you choose SASS over say LESS?**
+** Why did you choose LESS over say SASS?**
 
-SASS is better than LESS for many different reasons. If you would like to know more see [SASS vs LESS](http://css-tricks.com/sass-vs-less/).
+Simply because LESS doesn't require Ruby. There are versions of sass using libsass which can compile without Ruby but they currently don't provide sourcemaps support and are highly in development. If you would like to know more see [SASS vs LESS](http://css-tricks.com/sass-vs-less/).
 
 
 <pre>
-!app/bower_components/sass-bootstrap
+!app/bower_components/bootstrap
 </pre>
 
 
