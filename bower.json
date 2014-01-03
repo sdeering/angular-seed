@@ -9,6 +9,7 @@
   "collaborators": [
     "Richard Gustin <richard@clevertech.biz>",
     "Daniel Young <daniel@clevertech.biz>",
+    "Daniel Durante <daniel.durante@clevertech.biz>",
     "Sam Deering <sam@clevertech.biz>"
   ],
   "dependencies": {
@@ -16,8 +17,7 @@
     "json3": "~3.2.4",
     "es5-shim": "~2.1.0",
     "jquery": "~1.10.2",
-    "sass-bootstrap": "~3.0.0",
-    "compass-mixins": "~1.0.0",
+    "bootstrap": "~3.0.3",
     "underscore": "~1.5.2",
     "requirejs": "~2.1.9",
     "angular-resource": "1.2.4",
@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "angular-mocks": "1.2.4",
-    "angular-scenario": "1.2.4"
+    "angular-scenario": "1.2.4",
+    "less.js": "~1.6.0"
   }
 }

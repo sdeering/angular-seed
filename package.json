@@ -10,6 +10,7 @@
   "collaborators": [
     "Richard Gustin <richard@clevertech.biz>",
     "Daniel Young <daniel@clevertech.biz>",
+    "Daniel Durante <daniel.durante@clevertech.biz>",
     "Sam Deering <sam@clevertech.biz>"
   ],
   "dependencies": {},
@@ -31,6 +32,7 @@
     "grunt-contrib-jshint": "~0.7.1",
     "grunt-contrib-uglify": "~0.2.0",
     "grunt-contrib-watch": "~0.5.2",
+    "grunt-contrib-less": "~0.8.3",
     "grunt-google-cdn": "~0.2.0",
     "grunt-newer": "~0.5.4",
     "grunt-ngmin": "~0.0.2",

@@ -91,16 +91,16 @@ module.exports = function (grunt) {
       js: {
         files: [
           '{.tmp,<%= settings.dev.dir %>}/scripts/**/*.js',
-          '<%= settings.dev.dir %>/bower_components/sass-bootstrap/js/**/*.js'
+          '<%= settings.dev.dir %>/bower_components/bootstrap/js/*.js'
         ],
         tasks: ['newer:jshint:all']
       },
-      compass: {
+      less: {
         files: [
-          '<%= settings.dev.dir %>/styles/**/*.{scss,sass}',
-          '<%= settings.dev.dir %>/bower_components/sass-bootstrap/lib/**/*.{scss,sass}'
+          '<%= settings.dev.dir %>/styles/**/*.less',
+          '<%= settings.dev.dir %>/bower_components/bootstrap/less/*.less'
         ],
-        tasks: ['compass:server', 'autoprefixer']
+        tasks: ['less:dev']
       },
       styles: {
         files: ['<%= settings.dev.dir %>/styles/**/*.css'],
@@ -114,6 +114,7 @@ module.exports = function (grunt) {
           // '<%= watch.js.files %>',
           '<%= settings.dev.dir %>/**/*.html',
           '.tmp/styles/**/*.css',
+          // '<%= settings.dev.dir %>/styles/**/*.{css,less}',
           '<%= settings.dev.dir %>/images/**/*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       },
@@ -167,30 +168,24 @@ module.exports = function (grunt) {
       }
     },
 
-    // COMPASS config
-    compass: {
-      options: {
-        sassDir: '<%= settings.dev.dir %>/styles',
-        cssDir: '.tmp/styles',
-        generatedImagesDir: '.tmp/images/generated',
-        imagesDir: '<%= settings.dev.dir %>/images',
-        javascriptsDir: '<%= settings.dev.dir %>/scripts',
-        fontsDir: '<%= settings.dev.dir %>/fonts',
-        importPath: '<%= settings.dev.dir %>/bower_components',
-        httpImagesPath: '/images',
-        httpGeneratedImagesPath: '/images/generated',
-        httpFontsPath: '/fonts',
-        relativeAssets: false,
-        assetCacheBuster: false
+    // LESS config
+    less: {
+      dev: {
+        options: {
+          paths: ['<%= settings.dev.dir %>/styles/']
+        },
+        files: {
+          // '<%= settings.dev.dir %>/styles/main.css': '<%= settings.dev.dir %>/styles/main.less'
+          '.tmp/styles/main.css': '<%= settings.dev.dir %>/styles/main.less'
+        }
       },
       dist: {
         options: {
-          generatedImagesDir: '<%= settings.dist.dir %>/images/generated'
-        }
-      },
-      server: {
-        options: {
-          debugInfo: true
+          paths: ['assets/css'],
+          cleancss: true
+        },
+        files: {
+          '<%= settings.dev.dir %>/styles/main.css': '<%= settings.dev.dir %>/styles/main.less'
         }
       }
     },
@@ -451,17 +446,17 @@ module.exports = function (grunt) {
       },
       dev: [
         'watch:js',
-        'watch:compass',
+        'watch:less',
         'watch:styles',
         'watch:livereload',
         'watch:gruntfile'
       ],
       test: [
-        'compass',
+        'less:dist',
         'copy:styles'
       ],
       dist: [
-        'compass:dist',
+        'less:dist',
         'copy:styles',
         'imagemin',
         'svgmin',
@@ -520,12 +515,6 @@ module.exports = function (grunt) {
       protractor_install: {
         // todo: apply patch to latest version of protractor
         command: ''
-      },
-      // Install ruby and compass
-      // https://github.com/sdeering/cleverstack-angular-seed/blob/master/README.md#installing-ruby--compass
-      compass_install: {
-        // todo: install ruby and compass based on environment
-        command: ''
       }
     }
 
@@ -540,7 +529,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask('server:dev', 'Start up the development live reload server.', [
     'clean:server',
-    'compass:server',
     'copy:styles',
     'autoprefixer',
     'connect:livereload',
@@ -655,7 +643,6 @@ module.exports = function (grunt) {
     "shell:chromedriver_install",
     "shell:phantomjs_manual_install",
     "shell:protractor_install",
-    "shell:compass_install",
     "build",
     "docs:build",
     "karma:unitCoverage"
