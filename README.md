@@ -1,9 +1,7 @@
-CleverStack Angular Seed [![Build Status](https://secure.travis-ci.org/sdeering/cleverstack-angular-seed.png?branch=master)](https://travis-ci.org/sdeering/cleverstack-angular-seed) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+Angular Seed
 ====================
 
-
-
-![CleverStack Angular Seed"](app/images/cleverstack-angular.png "CleverStack Angular Seed")
+Based on CleverStack Angular Seed (but with no modularity).
 
 
 <blockquote>
@@ -23,14 +21,6 @@ These are the main features provided by this front-end development workflow:
 * **Code Coverage Reports** - Generate code coverage reports to see what code needs tests written.
 * **API Documentation Server** - Generate AngularJS API documentation with Docular.
 * **Production Preview Server** - Quickly view your latest production build.
-
-### Coming soon
-
-* CoffeeScript support.
-* Mocha support.
-* Sourcemaps support.
-* HTML5 push state.
-* More configurations to your default development server.
 
 
 It uses the following web technologies:
